@@ -1,0 +1,389 @@
+*{
+  margin:0;
+  padding:0;
+/*   display: flex; */
+/*   flex-direction: column; */
+}
+
+html {
+  height: 100%;
+  width: 100%;
+}
+.wall-body {
+    background-image: url("https://th.bing.com/th/id/R.5bfa63d0b39e5fe6c88f4a02ab628046?rik=28K2K5brPdDAKw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2frK0278l.jpg&ehk=bVWXBuZd3dOLLkyKjanoIk7puWmoyBNE6bzvl2IhQV8%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+  }
+
+  .Genre-body {
+    background-image: url("https://th.bing.com/th/id/R.908bc5782fc0fa588e7b09c81d092cb5?rik=%2b5QoNluEFJmpog&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fwp1859997.jpg&ehk=IqESLg0oNwLScjWogI2GqIDl5CL5tY6l9CYXhJPUkTo%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100%;
+    background-attachment: fixed;
+  }
+  .fav-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    background-image: url('https://wallpapercave.com/wp/wp2998037.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+  .Planner-body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background-image: url('https://th.bing.com/th/id/R.e71c110c107b607d2a6e5be5ed6369fa?rik=zyc7WKo7QBLObw&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+
+.g-bar{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+ 
+    background: black;
+    height:40px;
+}
+
+.g-bar li{
+   padding: 0 2rem; 
+}
+
+.header {
+    background: rgba(44, 44, 44, 0.419);
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  align-items: center;
+    font-size: 10px;
+  }
+
+
+
+
+
+
+.carousel{
+  position: relative;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.recommended_item{
+  display: block;
+  background: black;
+  height: 300px;
+  font-weight: bold;
+  color: white;
+  margin-right: auto;
+  margin-left: auto;
+  width: 100%;
+  height: 81%;
+}  
+
+.recommended_carousel{
+  width: 100%;
+  height: 19%
+  padding: 20px 0;
+  bottom: 0;
+  left: 0;
+  background: black; 
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.carousel_image{
+  display: block;
+  text-align: center;
+}
+
+.carousel_image img{
+  height: 100%;
+}
+
+ .carousel_button img{
+  height: 100%;
+  width: 30px;
+  border-radius: 50%;
+}
+} 
+
+/* .left_and_right_button{
+  width: 100%;
+  height: 100%;
+} */
+
+.carousel_button{
+  width 10px;
+  height: 10px;
+  display: inline-block;
+  background-color: red;
+  border-radius: 50%;
+}
+
+ .carousel_heading{
+  text-align: center;
+} 
+
+<style>
+  body {
+    background-attachment: fixed;
+  }
+
+/*wallpaper*/
+/* The container <div> - needed to position the dropdown content */
+.w-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: red;
+  border-block: 2px;
+  border-block-color: goldenrod;
+}
+ 
+.w-dropdown p{
+  margin: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 10px;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  color: white;
+}
+
+
+
+/*filter*/
+/* The container <div> - needed to position the dropdown content */
+.f-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: gold;
+  border-block: 2px;
+  border-block-color: goldenrod;
+}
+ 
+.f-dropdown p{
+  margin: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 10px;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  color: white;
+}
+
+ 
+/*planner*/
+/* The container <div> - needed to position the dropdown content */
+.p-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: lightgreen;
+  border-block: 2px;
+  border-block-color: goldenrod;
+}
+ 
+.p-dropdown p{
+  margin: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 10px;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  color: white;
+}
+
+  
+/*fav*/
+/* The container <div> - needed to position the dropdown content */
+.fa-dropdown {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  height: 40px;
+  background-color: lightseagreen;
+  border-block: 2px;
+  border-block-color: goldenrod;
+}
+ 
+.fa-dropdown p{
+  margin: 0px;
+  margin-bottom: auto;
+  margin-top: auto;
+  margin-left: 10px;
+  border: 0px;
+  padding: 0px;
+  height: 100%;
+  color: white;
+}
+
+  /* Dropdown Button */
+.dropbtn {
+  background-color: transparent;
+  color: white;
+  font-size: 25px;
+  border: none;
+  cursor: pointer;
+  height: 100%;
+  width: 30px;
+  vertical-align: middle;
+  margin-left: 10px;
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+   background-color: goldenrod;
+}
+
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: rgba(9, 9, 9, 0.627);
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: white;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#pokemon-table {
+  border-collapse: collapse;
+  margin: 20px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#pokemon-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#pokemon-table th,
+#pokemon-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#pokemon-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  text-align: left;
+}
+
+#pokemon-table td img {
+  max-width: 100%;
+}
+
+#type-filter {
+  margin-bottom: 20px;
+}
+
+/* Style the filter button */
+.filter-btn {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Change the color of the filter button on hover */
+.filter-btn:hover {
+  background-color: #3e8e41;
+}
+
+/* Style the modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.5);
+}
+
+/* Style the modal content */
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 600px;
+}
+
+/* Style the close button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+/* Change the color of the close button on hover */
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}

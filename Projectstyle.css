@@ -1,0 +1,471 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* home page css*/
+.Home_body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    background: rgba(255, 255, 255, 0.3);
+    background-image: url('https://th.bing.com/th/id/R.4a4fbb0b6c765cdfab4f4d0d706662f2?rik=4QgcRyXT%2f7SzWw&riu=http%3a%2f%2fwww.pixelstalk.net%2fwp-content%2fuploads%2f2016%2f02%2fPokemon-Backgrounds-for-desktop.jpg&ehk=e5ujYDP9uabVHMMCxX4An0iRh%2bAhfE887HLpu6JB%2b4Y%3d&risl=&pid=ImgRaw&r=0');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.search-bar{
+    width: 300px;
+    height: 30px;
+    background: transparent;
+    border: 2px solid whitesmoke;
+    border-radius: 15px; 
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input{
+    width: 90%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: whitesmoke;
+    padding-left: 10px;
+}
+
+.search-bar button{
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+    cursor: pointer;
+}
+
+.bar-hold{
+    display: flex;
+    justify-content: center;
+    background-color:  #ff7452;
+    height: 30px;
+
+}
+
+.block{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    height: 500px;
+}
+
+.quote{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.words{
+    color: whitesmoke;
+    width: 550px;
+    background: rgba(0, 0, 0, 0.525);
+    padding: 30px 70px 30px 70px;
+    box-shadow:  0 8px 16px 8px goldenrod;
+}
+
+li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: white;
+    font-size: 1rem;
+}
+
+a:hover{
+    color: #ff7452;
+}
+
+/* HEADER*/
+.Home_header{
+    position: relative;
+    padding: 0 2rem; 
+    background: rgba(0, 0, 0, 0.525);
+}
+
+.navbar{
+    width:100%;
+    height:60px;
+    max-width:1200px;
+    margin:0 ;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+ 
+  }
+
+  .navbar .logo a{
+    font-size: 1.5rem;
+    font-weight:bold;
+  }
+
+  .navbar .links{
+    display:flex;
+    gap: 2rem;
+  } 
+
+  .navbar .toggle-btn{
+    color:white;
+    font-size:15px;
+    cursor:pointer;
+    display:none;
+  }
+
+  .action-btn{
+    background: #ff7452;
+    color:white;
+    padding:0.5rem 1rem;
+    border:none;
+    outline:none;
+    border-radius:20px;
+    font-size:0.8rem;
+    font-weight:bold;
+    cursor:pointer;
+    transition:scale 0.2 ease; 
+  }
+
+  .action-btn:hover{
+    color:white;
+    scale:1.05;
+  }
+
+  .action-btn:active{
+    scale:0.95;
+  }
+
+  /*MENUE*/
+  .d_menue{
+    display:none;
+    position:absolute;
+    right:2rem;
+    top:60px;
+    height:0;
+    width:300px;
+    background: rgba(0, 0, 0, 0.651);
+    border-radius:10px;
+    overflow:hidden;
+    transition: height 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275)
+  }
+
+  .d_menue.open{
+    height:240px;
+  }
+
+  .d_menue li{
+    padding:0.5rem;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+  }
+
+  .d_menue .action-btn{
+    width:100%;
+    display:flex;
+    justify-content:center;
+  }
+
+  /*RESPONSIVE DESIGN*/
+  @media (max-width: 992px){
+    .navbar .links,
+    .navbar .action-btn{
+      display: none;
+    }
+  
+    .navbar .toggle-btn{
+      display: block;
+    }
+ 
+    .d_menue {
+     display: block;
+    }
+  }
+
+  /*Login page css*/
+
+  .Login-body {
+    background-image: url("https://th.bing.com/th/id/R.32569f13088ecdfab0a45ab31dd0b710?rik=gfkWVaFkjiEEmw&riu=http%3a%2f%2fwallpapercave.com%2fwp%2fhRKw6Pm.jpg&ehk=yGyIe1JRFvzpIKRuuynf5H9IOmrD85XynZUK%2be7PEgc%3d&risl=&pid=ImgRaw&r=0");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    height: 100vh;
+  }
+
+
+  .hold {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-size: 40px;
+    color: whitesmoke;
+    padding: 0 2rem; 
+    background: rgba(0, 0, 0, 0.525);
+    height:60px;
+  }
+  .Login-header {
+    color: white;
+    display: flex;
+    font-size: 30px;
+    justify-content: center;
+    padding: 10px 0 10px 0;
+  }
+
+  .container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 550px;
+    
+    border-radius: 10px;
+    margin-top: 20px;
+  }
+
+  .container .content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+  background: rgba(9, 9, 9, 0.627);
+    padding: 80px;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+  }
+
+  .content .logo{
+    font-size: 30px;
+  }
+
+  .content h2{
+    font-size: 40px;
+  }
+
+.text-sci h2 span{
+    font-size: 25px;
+}
+
+.text-sci p{
+    font-size: 30px;
+    margin: 20px;
+}
+
+.social-icons a i {
+    font-size: 25px;
+    color: whitesmoke;
+    margin-right: 10px;
+    transition: 0.5s ease;
+}
+
+
+
+.social-icons a:hover i{
+    transform: scale(1.2);
+}
+
+  .container .logform{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 58%);
+    height: 100%;
+    overflow: hidden;
+  }
+
+  .logform .form-box{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100% ;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(20px);
+    border-top-right-radius: 10px;
+    border-bottom-right-radius: 10px;
+    color: whitesmoke;
+  }
+
+  .logform .form-box.login{
+    transform: translateX(0);
+    transition: transform .6s ease;
+    transition-delay: .7s;
+  }
+
+  .logform.active .form-box.login{
+    transform: translateX(430px);
+    transition-delay: 0s;
+  }
+
+  .logform .form-box.register{
+    transform: translateX(430px);
+    transition: transform .6s ease;
+    transition-delay: 0s;
+  }
+  
+  .logform.active .form-box.register{
+    transform: translateX(0);
+    transition-delay: .7s;
+  }
+
+  .form-box h2{
+    font-size: 32px;
+    text-align: center;
+  }
+
+  .form-box .input-box{
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid whitesmoke;
+    margin: 30px 0;
+  }
+
+  .input-box input{
+    width: 100% ;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: whitesmoke;
+    font-weight: 500;
+    padding-right: 28px;
+  }
+
+  .input-box label{
+
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+  }
+
+  .input-box input:focus~label,
+  .input-box input:valid~label{
+    top: 5px;
+  }
+
+  .input-box .icon{
+    position: absolute;
+    top: 13px;
+    right: 0;
+    font-size: 19px;
+  }
+
+  .form-box .rember-forgot{
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+    justify-content: space-between;
+
+  }
+
+  .rember-forgot label input{
+    accent-color: whitesmoke;
+    margin-right: 3px;
+  }
+
+  .rember-forgot a{
+    color: whitesmoke;
+    text-decoration: none;
+  }
+
+  .rember-forgot a:hover{
+    text-decoration: underline;
+  }
+
+  .btn{
+    width: 100%;
+    height: 45px;
+    background: #ff7452;
+    border: none;
+    outline: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    color: whitesmoke;
+    font-weight: 500;
+    box-shadow: 0 0 10px rgba(0,0,0,0.5);
+  }
+
+  .form-box .log-register{
+    font-size: 14.5px;
+    font-weight: 500;
+    text-align: center;
+    margin-top: 25px;
+  }
+
+  .log-register p a{
+    color: whitesmoke;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .log-register p a:hover{
+    text-decoration: underline;
+  }
+
+  .quote{
+    background-color: rgba(9, 9, 9, 0.627);
+    color: #616bff;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    margin-top: 30px;
+    border-radius: 20px;
+  }
+
+.wallpapers div{
+  margin-top: 10px;
+  width: 100%;
+  height: 300px;
+}
+
+.wallpapers div img{
+  margin: 0;
+  padding: 0;
+  height: 300px;
+  width: 425px;
+  margin-left: 15px;
+}
+
+#pokemon-table{
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#pokemon-table thead{
+  color: black;
+}
+
+#pokedex-table{
+  color: #616bff;
+}
+
+
+
+
+
+

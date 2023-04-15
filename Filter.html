@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>𝐏𝐨𝐤é𝐝𝐞𝐱 𝕯𝖊𝖓/Filter</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link href="style.css" rel="stylesheet" type="text/css" />
+  <link href="Projectstyle.css" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body class="Genre-body">
+  <div class="hold">
+    <div class="banner">
+      <header>𝐏𝐨𝐤é𝐝𝐞𝐱 𝕯𝖊𝖓: 𝕾𝖔𝖗𝖙</header>
+    </div>
+    <div class="home_link">
+      <nav>
+        <a href="index.html">Home</a>
+      </nav>
+    </div>
+  </div>
+
+
+  <div class="f-dropdown">
+    <p>Navbar<button onclick="myFunction()" class="dropbtn">▾</button></p>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="/Favorites.html">Favorites</a>
+      <a href="/Planner.html">Planner</a>
+      <a href="/Wallpaper.html">Wallpaper</a>
+    </div>
+  </div>
+  <!DOCTYPE html>
+  <html>
+
+  <head>
+    <title>Pokemon Table</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+  </head>
+
+  <body>
+    <h1>Pokemon Table</h1>
+    <select id="type-filter">
+      <option value="all">All Types</option>
+      <option value="normal">Normal</option>
+      <option value="fighting">Fighting</option>
+      <option value="flying">Flying</option>
+      <option value="poison">Poison</option>
+      <option value="ground">Ground</option>
+      <option value="rock">Rock</option>
+      <option value="bug">Bug</option>
+      <option value="ghost">Ghost</option>
+      <option value="steel">Steel</option>
+      <option value="fire">Fire</option>
+      <option value="water">Water</option>
+      <option value="grass">Grass</option>
+      <option value="electric">Electric</option>
+      <option value="psychic">Psychic</option>
+      <option value="ice">Ice</option>
+      <option value="dragon">Dragon</option>
+      <option value="dark">Dark</option>
+      <option value="fairy">Fairy</option>
+    </select>
+    <table id="pokemon-table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>ID</th>
+          <th>Image</th>
+          <th>Type(s)</th>
+          <th>Abilities</th>
+          <th>Moves</th>
+          <th>Stats</th>
+        </tr>
+      </thead>
+      <tbody>
+      </tbody>
+    </table>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="app.js"></script>
+  </body>
+
+  </html>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    table {
+      margin: 0 auto;
+      border-collapse: collapse;
+      width: 100%;
+      max-width: 1200px;
+    }
+
+    th,
+    td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #f2f2f2;
+    }
+
+    img {
+      max-width: 100px;
+      height: auto;
+    }
+  </style>
+  <script>
+    $(document).ready(function () {
+      const pokemonUrl = "https://pokeapi.co/api/v2/pokemon/?limit=898";
+
+      function getPokemon(url) {
+        $.getJSON(url, function (data) {
+          const name = data.name;
+          const id = data.id;
+          const img = data.sprites.front_default;
+          const types = data.types.map(type => type.type.name).join(", ");
+          const abilities = data.abilities.map(ability => ability.ability.name).join(", ");
+          const moves = data.moves.map(move => move.move.name).slice(0, 5).join(", ");
+          const stats = data.stats.map(stat => `${stat.stat.name}: ${stat.base_stat}`).join(", ");
+
+          const pokemonHtml = `
+        <tr>
+          <td>${name}</td>
+          <td>${id}</td>
+          <td><img src="${img}" alt="${name}"></td>
+          <td>${types}</td>
+          <td>${abilities}</td>
+          <td>${moves}</td>
+          <td>${stats}</td>
+        </tr>
+      `;
+
+          $("#pokemon-table").append(pokemonHtml);
+        });
+      }
+
+      $.getJSON(pokemonUrl, function (data) {
+        data.results.forEach(result => {
+          const url = result.url;
+          getPokemon(url);
+        });
+      });
+
+      $("#type-filter").on("change", function () {
+        const type = $(this).val();
+        $("#pokemon-table tr").each(function () {
+          const pokemonType = $(this).find("td:eq(3)").text();
+          if (pokemonType.includes(type) || type === "all") {
+            $(this).show();
+          } else {
+            $(this).hide();
+          }
+        });
+      });
+    });
+
+    function sortTable() {
+      var rows = $("#pokemon-table tbody > tr").get();
+      rows.sort(function (a, b) {
+        var num1 = parseInt($(a).find("td:eq(1)").text());
+        var num2 = parseInt($(b).find("td:eq(1)").text());
+        return num1 - num2;
+      });
+      $.each(rows, function (index, row) {
+        $("#pokemon-table").children("tbody").append(row);
+      });
+    }
+
+    /* When the user clicks on the button,
+  toggle between hiding and showing the dropdown content */
+    function myFunction() {
+      document.getElementById("myDropdown").classList.toggle("show");
+    }
+
+    // Close the dropdown menu if the user clicks outside of it
+    window.onclick = function (event) {
+      if (!event.target.matches('.dropbtn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        var i;
+        for (i = 0; i < dropdowns.length; i++) {
+          var openDropdown = dropdowns[i];
+          if (openDropdown.classList.contains('show')) {
+            openDropdown.classList.remove('show');
+          }
+        }
+      }
+    }
+  </script>
+
+</html>
