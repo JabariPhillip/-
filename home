@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="Projectstyle.css" />
+  <title>𝐏𝐨𝐤é𝐝𝐞𝐱 𝕯𝖊𝖓</title>
+</head>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+<body class="Home_body">
+  <header class="Home_header">
+    <div class="navbar">
+      <div class="logo"><a href="#">𝐏𝐨𝐤é𝐝𝐞𝐱 𝕯𝖊𝖓</a></div>
+      <ul class="links">
+        <li><a href="Planner.html">Planner</a></li>
+        <li><a href="Favorites.html">Favorites</a></li>
+        <li><a href="Wallpaper.html">Wallpapers</a></li>
+        <li><a href="Filter.html">Filter</a></li>
+      </ul>
+      <a href="Login.html" class="action-btn">Login</a>
+      <div class="toggle-btn"><i class="fa-solid fa-bars"></i></div>
+    </div>
+
+    <div class="d_menue">
+      <li><a href="Planner.html">Planner</a></li>
+      <li><a href="Favorites.html">Favorites</a></li>
+      <li><a href="Wallpaper.html">Wallpapers</a></li>
+      <li><a href="Filter.html">Filter</a></li>
+      <li><a href="Login.html" class="action-btn">Login</a></li>
+    </div>
+  </header>
+
+
+
+  <div class="bar-hold">
+    <div class="bar">
+      <!--       <form action="#" class="search-bar">
+
+        <input type="text" id="pokemon-input" placeholder="𝔖𝔢𝔞𝔯𝔠𝔥..." />
+        <button onclick="getPokemon()">
+          <p class="bx bx-search"></p>
+        </button>
+
+      </form> -->
+    </div>
+  </div>
+  <div class="block">
+    <div class="quote">
+      <h1>PokeDex</h1>
+      <p>Enter a Pokemon ID or name:</p>
+      <input type="text" id="pokemon-input">
+      <button onclick="getPokemon()">Get Pokemon</button>
+      <table id="pokedex-table"></table>
+        <p>!!Zero and hashtag not allowed!!</p>
+    </div>
+  </div>
+
+  <style>
+    table {
+      border-collapse: collapse;
+      width: 100%;
+    }
+
+    th,
+    td {
+      text-align: left;
+      padding: 8px;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f2f2f2;
+    }
+
+    th {
+      background-color: #4CAF50;
+      color: white;
+    }
+
+    img {
+      max-width: 100px;
+      max-height: 100px;
+    }
+  </style>
+
+  <script>
+    const toggleBtn = document.querySelector(".toggle-btn");
+    const toggleBtnIonc = document.querySelector(".toggle-btn i");
+    const dropDownMenue = document.querySelector(".d_menue");
+
+    toggleBtn.onclick = function () {
+      const isOpen = dropDownMenue.classList.toggle("open"); // Store the current state
+
+      toggleBtnIonc.classList = isOpen
+        ? "fa-solid fa-xmark"
+        : "fa-solid fa-bars";
+    };
+
+    function getPokemon() {
+      const input = document.getElementById("pokemon-input").value;
+      const url = `https://pokeapi.co/api/v2/pokemon/${input}`;
+      $.getJSON(url, function (data) {
+        const name = data.name;
+        const id = data.id;
+        const img = data.sprites.front_default;
+        const types = data.types.map(type => type.type.name).join(", ");
+        const abilities = data.abilities.map(ability => ability.ability.name).join(", ");
+        const moves = data.moves.map(move => move.move.name).slice(0, 5).join(", ");
+        const stats = data.stats.map(stat => `${stat.stat.name}: ${stat.base_stat}`).join(", ");
+        const html = `
+            <tr>
+              <th>Name</th>
+              <td>${name}</td>
+            </tr>
+            <tr>
+              <th>ID</th>
+              <td>${id}</td>
+            </tr>
+            <tr>
+              <th>Image</th>
+              <td><img src="${img}" alt="${name}"></td>
+            </tr>
+            <tr>
+              <th>Types</th>
+              <td>${types}</td>
+            </tr>
+            <tr>
+              <th>Abilities</th>
+              <td>${abilities}</td>
+            </tr>
+            <tr>
+              <th>Moves</th>
+              <td>${moves}</td>
+            </tr>
+            <tr>
+              <th>Stats</th>
+              <td>${stats}</td>
+            </tr>
+          `;
+        $("#pokedex-table").html(html);
+      });
+    }
+  </script>
+</body>
+
+</html>
